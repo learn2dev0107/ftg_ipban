@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: fwban
+Version: 0.1.0
+Summary: kubectl-style CLI for the FortiGate quarantine (banned IP) monitor
+Requires-Python: >=3.8
+Requires-Dist: requests>=2.31
+Requires-Dist: urllib3>=2.0
+Provides-Extra: socks
+Requires-Dist: PySocks>=1.7.1; extra == "socks"

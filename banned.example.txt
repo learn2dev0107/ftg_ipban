@@ -1,0 +1,14 @@
+# fwban ban file: one entry per line
+#   ip            -> banned for the default (30 days, or --expiry)
+#   ip,days       -> banned for that many days
+#   ip,never      -> permanent (0 also means permanent)
+#   ip,12h        -> a duration with a unit also works (m, h, d, w)
+# Lines starting with # and text after # are ignored.
+#
+# Add:     fwban add -f banned.txt
+# Release: fwban delete -f banned.txt   (day column ignored)
+
+203.0.113.7,7
+198.51.100.9
+192.0.2.44,90
+2001:db8::1,never

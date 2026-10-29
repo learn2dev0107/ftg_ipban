@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fwban"
+version = "0.1.0"
+description = "kubectl-style CLI for the FortiGate quarantine (banned IP) monitor"
+requires-python = ">=3.8"
+dependencies = ["requests>=2.31", "urllib3>=2.0"]
+
+[project.optional-dependencies]
+socks = ["PySocks>=1.7.1"]
+
+[project.scripts]
+fwban = "fwban.cli:main"
+
+[tool.setuptools]
+packages = ["fwban"]

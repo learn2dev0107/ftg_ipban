@@ -1,0 +1,2 @@
+[console_scripts]
+fwban = fwban.cli:main

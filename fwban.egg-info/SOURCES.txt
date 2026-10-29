@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+fwban/__init__.py
+fwban/__main__.py
+fwban/cli.py
+fwban/client.py
+fwban/config.py
+fwban.egg-info/PKG-INFO
+fwban.egg-info/SOURCES.txt
+fwban.egg-info/dependency_links.txt
+fwban.egg-info/entry_points.txt
+fwban.egg-info/requires.txt
+fwban.egg-info/top_level.txt
+tests/test_cli.py
