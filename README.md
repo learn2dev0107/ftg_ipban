@@ -4,6 +4,36 @@ kubectl-style CLI to manage the FortiGate **quarantine** list
 (the banned IPs shown in the Quarantine Monitor): list, ban and release IPs
 over the FortiOS REST API, on one or more firewalls and VDOMs.
 
+## Config API users with limited role
+```bash
+# in Fortinet firewall 
+# config role
+config system accprofile
+    edit "soc_admin"
+        set scope global
+        set comments "rw user profile to add IP in quarantine"
+        set authgrp read-write 
+        # Others Access Permissions Access Control will be set to "None"
+    next
+end
+# config api user
+config system api-user
+    edit "api_rw_adm"
+        set comments "api user allowed to banned IPs"
+        set api-key ENC ******
+        set accprofile "soc_admin" 
+        config trusthost
+            edit 1
+                set ipv4-trusthost x.x.x.x 255.255.255.255
+            next
+        end
+    next
+end
+
+```
+
+# fwban commands overview
+
 ```bash
 fwban list                               # what is banned right now
 fwban add 203.0.113.7                    # ban for 30 days
